@@ -928,15 +928,9 @@
         <div class="subtitle">Resultado em 48h — sem custo, sem compromisso</div>
 
         <form id="leadForm" novalidate>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="nome">Nome *</label>
-              <input type="text" id="nome" name="nome" placeholder="Seu nome" required />
-            </div>
-            <div class="form-group">
-              <label for="sobrenome">Sobrenome *</label>
-              <input type="text" id="sobrenome" name="sobrenome" placeholder="Sobrenome" required />
-            </div>
+          <div class="form-group">
+            <label for="nome">Nome *</label>
+            <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required />
           </div>
 
           <div class="form-group">
@@ -944,52 +938,14 @@
             <input type="email" id="email" name="email" placeholder="voce@empresa.com.br" required />
           </div>
 
-          <div class="form-row">
-            <div class="form-group">
-              <label for="empresa">Empresa *</label>
-              <input type="text" id="empresa" name="empresa" placeholder="Nome da empresa" required />
-            </div>
-            <div class="form-group">
-              <label for="cargo">Cargo *</label>
-              <input type="text" id="cargo" name="cargo" placeholder="Ex: Gerente de RH" required />
-            </div>
+          <div class="form-group">
+            <label for="empresa">Empresa *</label>
+            <input type="text" id="empresa" name="empresa" placeholder="Nome da empresa" required />
           </div>
 
           <div class="form-group">
-            <label for="telefone">WhatsApp / Telefone</label>
-            <input type="tel" id="telefone" name="telefone" placeholder="(11) 9 0000-0000" />
-          </div>
-
-          <div class="form-group">
-            <label for="colaboradores">Nº aproximado de colaboradores *</label>
-            <select id="colaboradores" name="colaboradores" required>
-              <option value="" disabled selected>Selecione</option>
-              <option value="500-2000">500 a 2.000</option>
-              <option value="2000-10000">2.000 a 10.000</option>
-              <option value="10000-50000">10.000 a 50.000</option>
-              <option value="50000+">Mais de 50.000</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="estados">Em quantos estados sua empresa opera? *</label>
-            <select id="estados" name="estados" required>
-              <option value="" disabled selected>Selecione</option>
-              <option value="1-3">1 a 3 estados</option>
-              <option value="4-10">4 a 10 estados</option>
-              <option value="nacional">Mais de 10 estados / Nacional</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="prestador">Como a saúde corporativa está organizada hoje?</label>
-            <select id="prestador" name="prestador">
-              <option value="" disabled selected>Selecione</option>
-              <option value="multiplos">Vários prestadores regionais — cada estado tem o seu</option>
-              <option value="unico-insatisfeito">Um fornecedor nacional — mas com gaps de cobertura</option>
-              <option value="sem-prestador">Sem solução estruturada ainda</option>
-              <option value="estrutura-propria">Estrutura própria (clínica ou equipe interna)</option>
-            </select>
+            <label for="telefone">WhatsApp / Telefone *</label>
+            <input type="tel" id="telefone" name="telefone" placeholder="(11) 9 0000-0000" required />
           </div>
 
           <button type="submit" class="btn-submit">
@@ -1079,14 +1035,9 @@
       // Collect form data
       const data = {
         nome: document.getElementById('nome').value,
-        sobrenome: document.getElementById('sobrenome').value,
         email: document.getElementById('email').value,
         empresa: document.getElementById('empresa').value,
-        cargo: document.getElementById('cargo').value,
         telefone: document.getElementById('telefone').value,
-        colaboradores: document.getElementById('colaboradores').value,
-        estados: document.getElementById('estados').value,
-        prestador: document.getElementById('prestador').value,
         timestamp: new Date().toISOString(),
         source: new URLSearchParams(window.location.search).get('utm_source') || 'direct',
         medium: new URLSearchParams(window.location.search).get('utm_medium') || '',
