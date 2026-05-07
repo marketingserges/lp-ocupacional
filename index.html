@@ -927,39 +927,11 @@
         <h3>Avaliação gratuita da sua saúde corporativa</h3>
         <div class="subtitle">Resultado em 48h — sem custo, sem compromisso</div>
 
-        <form id="leadForm" novalidate>
-          <div class="form-group">
-            <label for="nome">Nome *</label>
-            <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required />
-          </div>
-
-          <div class="form-group">
-            <label for="email">E-mail profissional *</label>
-            <input type="email" id="email" name="email" placeholder="voce@empresa.com.br" required />
-          </div>
-
-          <div class="form-group">
-            <label for="empresa">Empresa *</label>
-            <input type="text" id="empresa" name="empresa" placeholder="Nome da empresa" required />
-          </div>
-
-          <div class="form-group">
-            <label for="telefone">WhatsApp / Telefone *</label>
-            <input type="tel" id="telefone" name="telefone" placeholder="(11) 9 0000-0000" required />
-          </div>
-
-          <button type="submit" class="btn-submit">
-            Quero meu diagnóstico gratuito →
-          </button>
-          <p class="form-privacy">Ao enviar, você concorda com nossa <a href="#" style="color:#A0AEC0;">Política de Privacidade</a>. Não enviamos spam.</p>
-        </form>
-
-        <!-- Success State -->
-        <div class="form-success" id="successMsg">
-          <div class="success-icon">✅</div>
-          <h3>Pronto! Sua avaliação está sendo preparada.</h3>
-          <p>Nossa equipe já está analisando o perfil da sua empresa. Em até <strong>48 horas úteis</strong> você recebe uma avaliação completa da saúde corporativa da sua operação — com os gaps, os riscos e o que fazer.</p>
-        </div>
+        <div role="main" id="ocupacional-36ac6500826b06bb34ec"></div>
+        <script type="text/javascript" src="https://d335luupugsy2.cloudfront.net/js/rdstation-forms/stable/rdstation-forms.min.js"></script>
+        <script type="text/javascript">
+          new RDStationForms('ocupacional-36ac6500826b06bb34ec', 'null').createForm();
+        </script>
       </div>
     </div>
   </section>
@@ -1014,56 +986,6 @@
       });
     });
 
-    // Form submit
-    document.getElementById('leadForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-
-      const required = this.querySelectorAll('[required]');
-      let valid = true;
-
-      required.forEach(field => {
-        if (!field.value.trim()) {
-          field.style.borderColor = '#E53E3E';
-          valid = false;
-        } else {
-          field.style.borderColor = '';
-        }
-      });
-
-      if (!valid) return;
-
-      // Collect form data
-      const data = {
-        nome: document.getElementById('nome').value,
-        email: document.getElementById('email').value,
-        empresa: document.getElementById('empresa').value,
-        telefone: document.getElementById('telefone').value,
-        timestamp: new Date().toISOString(),
-        source: new URLSearchParams(window.location.search).get('utm_source') || 'direct',
-        medium: new URLSearchParams(window.location.search).get('utm_medium') || '',
-        campaign: new URLSearchParams(window.location.search).get('utm_campaign') || '',
-      };
-
-      // TODO: Replace with your CRM/webhook endpoint
-      // fetch('https://seu-crm.com/api/leads', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify(data)
-      // });
-
-      console.log('Lead captured:', data);
-
-      // Show success
-      this.style.display = 'none';
-      document.getElementById('successMsg').style.display = 'block';
-
-      // Scroll to form card
-      document.getElementById('formulario').scrollIntoView({ behavior: 'smooth' });
-
-      // GTM / GA4 event (uncomment when pixel is installed)
-      // window.dataLayer = window.dataLayer || [];
-      // window.dataLayer.push({ event: 'lead_submit', lead_type: 'diagnostico_ocupacional' });
-    });
   </script>
 
   <!-- RD Station Monitoring -->
