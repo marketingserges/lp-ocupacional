@@ -943,11 +943,15 @@
 
   <!-- FORM LOGIC -->
   <script>
-    // Smooth scroll
+    // Smooth scroll — mobile vai direto ao form-card, desktop vai à section
     document.querySelectorAll('a[href="#formulario"]').forEach(a => {
       a.addEventListener('click', e => {
         e.preventDefault();
-        document.getElementById('formulario').scrollIntoView({ behavior: 'smooth' });
+        const isMobile = window.innerWidth <= 600;
+        const target = isMobile
+          ? document.querySelector('.form-card')
+          : document.getElementById('formulario');
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
       });
     });
 
