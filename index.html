@@ -46,8 +46,9 @@
       background: var(--charcoal);
       padding: 18px 40px;
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: space-between;
+      gap: 6px;
       border-bottom: 1px solid rgba(92,225,230,0.2);
     }
     .logo img {
@@ -776,32 +777,7 @@
     }
     footer a { color: rgba(92,225,230,0.6); }
 
-    /* ─── STICKY MOBILE CTA ─── */
-    .sticky-cta {
-      display: none;
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: var(--charcoal);
-      padding: 12px 20px;
-      z-index: 100;
-      border-top: 1px solid rgba(92,225,230,0.2);
-    }
-    .sticky-cta a {
-      display: block;
-      background: var(--accent);
-      color: var(--charcoal);
-      text-align: center;
-      padding: 14px;
-      border-radius: 6px;
-      font-weight: 700;
-      font-size: 0.9rem;
-      text-decoration: none;
-      letter-spacing: 0.3px;
-    }
     @media (max-width: 600px) {
-      .sticky-cta { display: block; }
       .hero-cta-secondary {
         margin-left: 0;
         margin-top: 12px;
@@ -964,10 +940,6 @@
     <p>© 2026 SERGES Saúde · Saúde Corporativa Nacional · <a href="#" style="color:#4A6A96;">Política de Privacidade</a></p>
   </footer>
 
-  <!-- STICKY MOBILE CTA -->
-  <div class="sticky-cta">
-    <a href="#formulario">Avaliação gratuita em 48h →</a>
-  </div>
 
   <!-- FORM LOGIC -->
   <script>
