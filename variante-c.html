@@ -1,0 +1,2060 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SERGES Ocupacional — Gestão de Saúde Corporativa Nacional</title>
+  <meta name="description" content="Gestão de saúde ocupacional unificada para empresas com operações nacionais. Um único contrato, 3.400+ municípios, 6.000+ médicos credenciados." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg-dark: #080d1a;
+      --bg-dark-2: #0d1425;
+      --bg-dark-3: #111827;
+      --blue-deep: #0a1e40;
+      --blue-mid: #0f2d5c;
+      --blue-accent: #1d4ed8;
+      --blue-light: #3b82f6;
+      --green: #22c55e;
+      --green-dark: #16a34a;
+      --white: #ffffff;
+      --gray-100: #f3f4f6;
+      --gray-200: #e5e7eb;
+      --gray-400: #9ca3af;
+      --gray-500: #6b7280;
+      --gray-600: #4b5563;
+      --gray-700: #374151;
+      --text-dark: #1f2937;
+      --radius: 12px;
+      --radius-lg: 20px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-dark);
+      color: var(--white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── NAVIGATION ─── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 0 40px;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(8, 13, 26, 0.7);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .nav-logo img {
+      height: 36px;
+      filter: brightness(0) invert(1);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--white); }
+
+    .nav-cta {
+      background: var(--green);
+      color: var(--white) !important;
+      padding: 10px 22px;
+      border-radius: 8px;
+      font-weight: 600 !important;
+      font-size: 14px !important;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .nav-cta:hover {
+      background: var(--green-dark) !important;
+      transform: translateY(-1px);
+    }
+
+    /* ─── HERO ─── */
+    #hero {
+      min-height: 100vh;
+      background: var(--bg-dark);
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding-top: 72px;
+    }
+
+    .hero-bg-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(29, 78, 216, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(29, 78, 216, 0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+
+    .hero-glow {
+      position: absolute;
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle, rgba(29, 78, 216, 0.12) 0%, transparent 70%);
+      top: -200px;
+      right: -200px;
+      pointer-events: none;
+    }
+
+    .hero-glow-2 {
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(34, 197, 94, 0.06) 0%, transparent 70%);
+      bottom: -100px;
+      left: -100px;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 120px 40px 100px;
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .hero-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(34, 197, 94, 0.1);
+      border: 1px solid rgba(34, 197, 94, 0.25);
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 100px;
+      margin-bottom: 32px;
+    }
+
+    .hero-label-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--green);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    h1.hero-headline {
+      font-size: clamp(36px, 5vw, 64px);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      color: var(--white);
+      margin-bottom: 24px;
+    }
+
+    h1.hero-headline span {
+      background: linear-gradient(135deg, var(--blue-light) 0%, var(--green) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-sub {
+      font-size: 20px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.6;
+      margin-bottom: 16px;
+      max-width: 560px;
+    }
+
+    .hero-positioning {
+      font-size: 16px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.45);
+      font-style: italic;
+      margin-bottom: 48px;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--green);
+      color: var(--white);
+      padding: 16px 32px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 15px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 4px 24px rgba(34, 197, 94, 0.3);
+    }
+
+    .btn-primary:hover {
+      background: var(--green-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(34, 197, 94, 0.4);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      color: var(--white);
+      padding: 16px 32px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 15px;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.2);
+      transition: border-color 0.2s, background 0.2s, transform 0.15s;
+    }
+
+    .btn-secondary:hover {
+      border-color: rgba(255,255,255,0.4);
+      background: rgba(255,255,255,0.05);
+      transform: translateY(-2px);
+    }
+
+    .hero-form-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius-lg);
+      padding: 40px 32px;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-form-card h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .hero-form-card p {
+      font-size: 13px;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 28px;
+    }
+
+    /* ─── STRIP DE NÚMEROS ─── */
+    #numeros {
+      background: var(--bg-dark-2);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding: 64px 40px;
+    }
+
+    .numeros-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: rgba(255,255,255,0.06);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .numero-item {
+      background: var(--bg-dark-2);
+      padding: 48px 40px;
+      text-align: center;
+    }
+
+    .numero-valor {
+      font-size: 52px;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.6) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .numero-label {
+      font-size: 14px;
+      color: rgba(255,255,255,0.45);
+      font-weight: 500;
+      letter-spacing: 0.01em;
+    }
+
+    /* ─── SECTION BASE ─── */
+    section { scroll-margin-top: 72px; }
+
+    .section-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    .section-label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .section-sub {
+      font-size: 18px;
+      line-height: 1.7;
+      max-width: 640px;
+    }
+
+    /* ─── PROBLEMA ─── */
+    #problema {
+      background: var(--white);
+      color: var(--text-dark);
+      padding: 120px 0;
+    }
+
+    #problema .section-title { color: var(--text-dark); }
+    #problema .section-sub { color: var(--gray-500); }
+    #problema .section-label { color: var(--blue-accent); }
+
+    .problema-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      margin-top: 64px;
+    }
+
+    .problema-visual {
+      background: var(--bg-dark);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .problema-visual-bg {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 0%, rgba(29, 78, 216, 0.15) 0%, transparent 60%);
+    }
+
+    .problema-nodes {
+      position: relative;
+      z-index: 1;
+    }
+
+    .node-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .node-box {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.7);
+      white-space: nowrap;
+    }
+
+    .node-box.red {
+      border-color: rgba(239, 68, 68, 0.3);
+      background: rgba(239, 68, 68, 0.07);
+      color: rgba(239, 68, 68, 0.8);
+    }
+
+    .node-arrow {
+      color: rgba(255,255,255,0.2);
+      font-size: 18px;
+    }
+
+    .problema-dores {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .dor-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .dor-icon {
+      width: 40px;
+      height: 40px;
+      min-width: 40px;
+      background: rgba(239, 68, 68, 0.08);
+      border: 1px solid rgba(239, 68, 68, 0.2);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+
+    .dor-texto h4 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 4px;
+    }
+
+    .dor-texto p {
+      font-size: 14px;
+      color: var(--gray-500);
+      line-height: 1.6;
+    }
+
+    /* ─── SOLUÇÃO ─── */
+    #solucao {
+      background: var(--bg-dark);
+      padding: 120px 0;
+    }
+
+    .solucao-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      margin-top: 64px;
+    }
+
+    .solucao-grid.reverse { direction: rtl; }
+    .solucao-grid.reverse > * { direction: ltr; }
+
+    .solucao-pilares {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .pilar-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 20px 24px;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: var(--radius);
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .pilar-item:hover {
+      border-color: rgba(34, 197, 94, 0.2);
+      background: rgba(34, 197, 94, 0.03);
+    }
+
+    .pilar-icon {
+      width: 40px;
+      height: 40px;
+      min-width: 40px;
+      background: rgba(34, 197, 94, 0.1);
+      border: 1px solid rgba(34, 197, 94, 0.2);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+
+    .pilar-texto h4 {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .pilar-texto p {
+      font-size: 13px;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.6;
+    }
+
+    .solucao-visual {
+      background: var(--bg-dark-2);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius-lg);
+      padding: 48px 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .solucao-visual-glow {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(34, 197, 94, 0.1) 0%, transparent 70%);
+      top: -100px;
+      right: -100px;
+      pointer-events: none;
+    }
+
+    .dashboard-mock {
+      position: relative;
+      z-index: 1;
+    }
+
+    .dash-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+    }
+
+    .dash-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.7);
+    }
+
+    .dash-badge {
+      background: rgba(34, 197, 94, 0.15);
+      color: var(--green);
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 100px;
+      border: 1px solid rgba(34, 197, 94, 0.25);
+    }
+
+    .dash-stat-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .dash-stat {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 10px;
+      padding: 16px;
+    }
+
+    .dash-stat-num {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--white);
+      margin-bottom: 2px;
+    }
+
+    .dash-stat-label {
+      font-size: 11px;
+      color: rgba(255,255,255,0.4);
+      font-weight: 500;
+    }
+
+    .dash-bar-group { margin-top: 8px; }
+
+    .dash-bar-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 6px;
+    }
+
+    .dash-bar-track {
+      background: rgba(255,255,255,0.06);
+      border-radius: 100px;
+      height: 6px;
+      margin-bottom: 10px;
+    }
+
+    .dash-bar-fill {
+      height: 6px;
+      border-radius: 100px;
+      background: linear-gradient(90deg, var(--blue-light), var(--green));
+    }
+
+    /* ─── COMPARATIVO ─── */
+    #comparativo {
+      background: var(--bg-dark-3);
+      padding: 120px 0;
+    }
+
+    .comparativo-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+
+    .comparativo-header .section-sub {
+      margin: 0 auto;
+      color: rgba(255,255,255,0.5);
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
+      border-radius: var(--radius-lg);
+    }
+
+    table.comp-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--bg-dark-2);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      font-size: 14px;
+    }
+
+    .comp-table thead tr {
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .comp-table th {
+      padding: 20px 28px;
+      text-align: left;
+      font-weight: 700;
+      font-size: 13px;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.02em;
+    }
+
+    .comp-table th.col-serges {
+      background: rgba(34, 197, 94, 0.07);
+      border-left: 2px solid rgba(34, 197, 94, 0.4);
+      color: var(--green);
+    }
+
+    .comp-table td {
+      padding: 16px 28px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      color: rgba(255,255,255,0.7);
+      vertical-align: middle;
+    }
+
+    .comp-table td:first-child {
+      font-weight: 500;
+      color: rgba(255,255,255,0.85);
+    }
+
+    .comp-table td.col-serges {
+      background: rgba(34, 197, 94, 0.04);
+      border-left: 2px solid rgba(34, 197, 94, 0.25);
+    }
+
+    .comp-table tbody tr:hover td {
+      background: rgba(255,255,255,0.02);
+    }
+
+    .comp-table tbody tr:hover td.col-serges {
+      background: rgba(34, 197, 94, 0.07);
+    }
+
+    .check-yes {
+      color: var(--green);
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    .check-no {
+      color: #ef4444;
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    .check-warn {
+      color: #f59e0b;
+      font-weight: 600;
+      font-size: 13px;
+    }
+
+    /* ─── SERVIÇOS ─── */
+    #servicos {
+      background: var(--white);
+      color: var(--text-dark);
+      padding: 120px 0;
+    }
+
+    #servicos .section-title { color: var(--text-dark); }
+    #servicos .section-sub { color: var(--gray-500); }
+    #servicos .section-label { color: var(--blue-accent); }
+
+    .servicos-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+
+    .servicos-header .section-sub { margin: 0 auto; }
+
+    .servicos-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .servico-card {
+      background: var(--gray-100);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      padding: 32px 28px;
+      transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+    }
+
+    .servico-card:hover {
+      border-color: var(--blue-accent);
+      box-shadow: 0 8px 32px rgba(29, 78, 216, 0.1);
+      transform: translateY(-4px);
+    }
+
+    .servico-icon {
+      width: 52px;
+      height: 52px;
+      background: rgba(29, 78, 216, 0.08);
+      border: 1px solid rgba(29, 78, 216, 0.15);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .servico-card h3 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 10px;
+    }
+
+    .servico-card p {
+      font-size: 14px;
+      color: var(--gray-500);
+      line-height: 1.65;
+      margin-bottom: 16px;
+    }
+
+    .servico-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .servico-tag {
+      background: rgba(29, 78, 216, 0.07);
+      border: 1px solid rgba(29, 78, 216, 0.15);
+      color: var(--blue-accent);
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 100px;
+    }
+
+    /* ─── CLIENTES ─── */
+    #clientes {
+      background: var(--bg-dark);
+      padding: 120px 0;
+    }
+
+    .clientes-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+
+    .clientes-header .section-sub {
+      margin: 0 auto;
+      color: rgba(255,255,255,0.5);
+    }
+
+    .clientes-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 64px;
+    }
+
+    .cliente-card {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: var(--radius-lg);
+      padding: 36px 32px;
+      position: relative;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .cliente-card:hover {
+      border-color: rgba(34, 197, 94, 0.2);
+      background: rgba(34, 197, 94, 0.02);
+    }
+
+    .cliente-quote {
+      font-size: 32px;
+      color: var(--green);
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 16px;
+      opacity: 0.6;
+    }
+
+    .cliente-card p {
+      font-size: 15px;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.7;
+      font-style: italic;
+      margin-bottom: 24px;
+    }
+
+    .cliente-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .cliente-avatar {
+      width: 40px;
+      height: 40px;
+      background: rgba(29, 78, 216, 0.2);
+      border: 1px solid rgba(29, 78, 216, 0.3);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+    }
+
+    .cliente-nome {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    .cliente-cargo {
+      font-size: 12px;
+      color: rgba(255,255,255,0.4);
+    }
+
+    .lgpd-note {
+      text-align: center;
+      font-size: 12px;
+      color: rgba(255,255,255,0.25);
+      letter-spacing: 0.03em;
+    }
+
+    /* ─── FAQ ─── */
+    #faq {
+      background: var(--white);
+      color: var(--text-dark);
+      padding: 120px 0;
+    }
+
+    .faq-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+
+    #faq .section-title { color: var(--text-dark); }
+    #faq .section-label { color: var(--blue-accent); }
+
+    .faq-list {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 24px 0;
+      text-align: left;
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text-dark);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      transition: color 0.2s;
+    }
+
+    .faq-question:hover { color: var(--blue-accent); }
+
+    .faq-chevron {
+      width: 24px;
+      height: 24px;
+      min-width: 24px;
+      background: var(--gray-200);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      transition: transform 0.3s, background 0.2s;
+    }
+
+    .faq-item.open .faq-chevron {
+      transform: rotate(180deg);
+      background: rgba(29, 78, 216, 0.1);
+      color: var(--blue-accent);
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 0 0 24px;
+      font-size: 15px;
+      color: var(--gray-500);
+      line-height: 1.75;
+    }
+
+    .faq-item.open .faq-answer { display: block; }
+
+    /* ─── CTA / FORMULÁRIO ─── */
+    #contato {
+      background: var(--bg-dark);
+      padding: 120px 0;
+    }
+
+    .contato-grid {
+      display: grid;
+      grid-template-columns: 1fr 480px;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .contato-copy h2 {
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .contato-copy p {
+      font-size: 17px;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.7;
+      margin-bottom: 40px;
+    }
+
+    .contato-garantias {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .garantia-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.6);
+    }
+
+    .garantia-check {
+      width: 22px;
+      height: 22px;
+      min-width: 22px;
+      background: rgba(34, 197, 94, 0.15);
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--green);
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .contato-form-wrap {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius-lg);
+      padding: 40px 36px;
+    }
+
+    .form-label {
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .rd-form-container {
+      min-height: 200px;
+    }
+
+    .whatsapp-divider {
+      text-align: center;
+      margin: 28px 0;
+      position: relative;
+    }
+
+    .whatsapp-divider::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: rgba(255,255,255,0.08);
+    }
+
+    .whatsapp-divider span {
+      position: relative;
+      background: rgba(255,255,255,0.03);
+      padding: 0 12px;
+      font-size: 12px;
+      color: rgba(255,255,255,0.3);
+    }
+
+    .btn-whatsapp {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      background: #25d366;
+      color: var(--white);
+      padding: 14px 24px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 15px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .btn-whatsapp:hover {
+      background: #1fba58;
+      transform: translateY(-2px);
+    }
+
+    .btn-whatsapp svg {
+      width: 20px;
+      height: 20px;
+      fill: var(--white);
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--bg-dark-2);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 64px 40px 40px;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+
+    .footer-brand img {
+      height: 32px;
+      filter: brightness(0) invert(1);
+      margin-bottom: 16px;
+    }
+
+    .footer-brand p {
+      font-size: 13px;
+      color: rgba(255,255,255,0.35);
+      line-height: 1.7;
+      max-width: 280px;
+    }
+
+    .footer-col h4 {
+      font-size: 13px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .footer-col ul { list-style: none; }
+
+    .footer-col ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-col ul li a {
+      font-size: 14px;
+      color: rgba(255,255,255,0.45);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-col ul li a:hover { color: rgba(255,255,255,0.8); }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding-top: 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      color: rgba(255,255,255,0.25);
+    }
+
+    .footer-legal a {
+      color: rgba(255,255,255,0.3);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-legal a:hover { color: rgba(255,255,255,0.55); }
+
+    /* ─── BOTÃO FLUTUANTE WHATSAPP ─── */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      z-index: 200;
+      width: 60px;
+      height: 60px;
+      background: #25d366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 32px rgba(37, 211, 102, 0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 12px 40px rgba(37, 211, 102, 0.55);
+    }
+
+    .whatsapp-float svg {
+      width: 30px;
+      height: 30px;
+      fill: white;
+    }
+
+    .whatsapp-tooltip {
+      position: absolute;
+      right: 72px;
+      background: rgba(15, 23, 42, 0.95);
+      color: white;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 8px 14px;
+      border-radius: 8px;
+      white-space: nowrap;
+      pointer-events: none;
+      opacity: 0;
+      transform: translateX(8px);
+      transition: opacity 0.2s, transform 0.2s;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .whatsapp-float:hover .whatsapp-tooltip {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* ─── RD STATION OVERRIDE ─── */
+    #ocupacional-serges {
+      color: var(--white);
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 1024px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      .hero-form-card {
+        max-width: 480px;
+      }
+
+      .numeros-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .problema-grid,
+      .solucao-grid,
+      .contato-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      .servicos-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .clientes-grid {
+        grid-template-columns: 1fr;
+        max-width: 560px;
+        margin: 0 auto 64px;
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+
+      .nav-links { display: none; }
+
+      .hero-inner { padding: 80px 20px 80px; }
+
+      .section-inner { padding: 0 20px; }
+
+      #numeros { padding: 48px 20px; }
+
+      .numeros-grid { grid-template-columns: repeat(2, 1fr); }
+
+      .numero-item { padding: 32px 20px; }
+      .numero-valor { font-size: 38px; }
+
+      #problema,
+      #solucao,
+      #comparativo,
+      #servicos,
+      #clientes,
+      #faq,
+      #contato {
+        padding: 80px 0;
+      }
+
+      .servicos-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+      }
+
+      .whatsapp-float {
+        bottom: 20px;
+        right: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── NAVEGAÇÃO ─── -->
+<nav>
+  <a href="#hero" class="nav-logo">
+    <img src="logo-serges.png" alt="SERGES" />
+  </a>
+  <ul class="nav-links">
+    <li><a href="#solucao">Solução</a></li>
+    <li><a href="#servicos">Serviços</a></li>
+    <li><a href="#comparativo">Cobertura</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <a href="#contato" class="nav-cta">Falar com especialista</a>
+</nav>
+
+<!-- ─── HERO ─── -->
+<section id="hero">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-glow-2"></div>
+
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-label">
+        <div class="hero-label-dot"></div>
+        Saúde Ocupacional Corporativa
+      </div>
+
+      <h1 class="hero-headline">
+        Se sua empresa opera em todo o Brasil,<br />
+        a gestão de saúde ocupacional<br />
+        <span>também deveria.</span>
+      </h1>
+
+      <p class="hero-sub">
+        Unifique toda a saúde ocupacional da sua empresa em um único contrato, uma única rede e um único sistema de controle — de norte a sul do país.
+      </p>
+
+      <p class="hero-positioning">Uma operação. Não um mosaico de prestadores.</p>
+
+      <div class="hero-ctas">
+        <a href="#contato" class="btn-primary">
+          Solicitar avaliação gratuita
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+        <a href="https://wa.me/5541992133430?text=Ol%C3%A1%2C+gostaria+de+saber+mais+sobre+a+gest%C3%A3o+de+sa%C3%BAde+ocupacional+da+SERGES." target="_blank" class="btn-secondary">
+          Falar pelo WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-form-card">
+      <h3>Avaliação gratuita em 48h</h3>
+      <p>Sem compromisso. Confidencialidade garantida.</p>
+
+      <div class="rd-form-container">
+        <div role="main" id="ocupacional-serges"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── STRIP DE NÚMEROS ─── -->
+<div id="numeros">
+  <div class="numeros-grid">
+    <div class="numero-item">
+      <div class="numero-valor">6.000+</div>
+      <div class="numero-label">Médicos credenciados</div>
+    </div>
+    <div class="numero-item">
+      <div class="numero-valor">3.400+</div>
+      <div class="numero-label">Municípios cobertos</div>
+    </div>
+    <div class="numero-item">
+      <div class="numero-valor">750 mil+</div>
+      <div class="numero-label">Consultas por ano</div>
+    </div>
+    <div class="numero-item">
+      <div class="numero-valor">10+</div>
+      <div class="numero-label">Anos de operação</div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── O PROBLEMA ─── -->
+<section id="problema">
+  <div class="section-inner">
+    <div class="problema-grid">
+      <div>
+        <div class="section-label">O Problema</div>
+        <h2 class="section-title">Sua operação é nacional. Sua saúde ocupacional não é.</h2>
+        <p class="section-sub">Empresas com operações em múltiplos estados dependem de uma colcha de retalhos de prestadores regionais — cada um com seu contrato, seu sistema, seu prazo e seus critérios.</p>
+
+        <div class="problema-dores" style="margin-top: 40px;">
+          <div class="dor-item">
+            <div class="dor-icon">⚡</div>
+            <div class="dor-texto">
+              <h4>Inconsistência entre regiões</h4>
+              <p>Padrões de atendimento, prazos e qualidade variam radicalmente de um prestador para o outro, criando passivos trabalhistas e de compliance.</p>
+            </div>
+          </div>
+          <div class="dor-item">
+            <div class="dor-icon">📋</div>
+            <div class="dor-texto">
+              <h4>Gestão administrativa fragmentada</h4>
+              <p>Múltiplos contratos, NFs, fornecedores e sistemas para consolidar. Sua equipe de RH gasta horas gerenciando prestadores em vez de pessoas.</p>
+            </div>
+          </div>
+          <div class="dor-item">
+            <div class="dor-icon">⚠️</div>
+            <div class="dor-texto">
+              <h4>Risco de não-conformidade com eSocial e NRs</h4>
+              <p>Com cada prestador operando de forma independente, a rastreabilidade dos laudos, ASOs e programas PGR/PCMSO fica comprometida.</p>
+            </div>
+          </div>
+          <div class="dor-item">
+            <div class="dor-icon">🔍</div>
+            <div class="dor-texto">
+              <h4>Falta de visibilidade consolidada</h4>
+              <p>Sem um dashboard unificado, gestores de saúde corporativa operam às cegas — sem benchmarks, sem indicadores, sem controle real.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="problema-visual">
+        <div class="problema-visual-bg"></div>
+        <div class="problema-nodes">
+          <p style="font-size:13px; color: rgba(255,255,255,0.4); margin-bottom:24px; font-weight:600; letter-spacing:0.05em; text-transform:uppercase;">Modelo fragmentado atual</p>
+
+          <div style="text-align:center; margin-bottom:20px;">
+            <div class="node-box" style="display:inline-block; background: rgba(29,78,216,0.15); border-color: rgba(29,78,216,0.3); color: rgba(255,255,255,0.9); font-weight:600;">Empresa</div>
+          </div>
+
+          <div style="display:flex; justify-content:center; gap:4px; margin-bottom:8px;">
+            <span style="color:rgba(255,255,255,0.15);">↙</span>
+            <span style="color:rgba(255,255,255,0.15);">↓</span>
+            <span style="color:rgba(255,255,255,0.15);">↓</span>
+            <span style="color:rgba(255,255,255,0.15);">↓</span>
+            <span style="color:rgba(255,255,255,0.15);">↘</span>
+          </div>
+
+          <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:8px; margin-bottom:12px;">
+            <div class="node-box red" style="text-align:center; font-size:11px;">Prestador SP</div>
+            <div class="node-box red" style="text-align:center; font-size:11px;">Prestador MG</div>
+            <div class="node-box red" style="text-align:center; font-size:11px;">Prestador RS</div>
+            <div class="node-box red" style="text-align:center; font-size:11px;">Prestador BA</div>
+            <div class="node-box red" style="text-align:center; font-size:11px;">Prestador PA</div>
+            <div class="node-box red" style="text-align:center; font-size:11px;">+ outros</div>
+          </div>
+
+          <div style="background:rgba(239,68,68,0.08); border:1px solid rgba(239,68,68,0.2); border-radius:8px; padding:16px; margin-top:20px;">
+            <p style="font-size:12px; color:rgba(239,68,68,0.7); margin:0; line-height:1.5;">
+              ✗ Contratos separados por estado<br/>
+              ✗ Sistemas incompatíveis<br/>
+              ✗ Sem padrão de qualidade<br/>
+              ✗ Compliance manual e fragmentado
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── A SOLUÇÃO ─── -->
+<section id="solucao">
+  <div class="section-inner">
+    <div class="solucao-grid">
+      <div>
+        <div class="section-label">A Solução SERGES</div>
+        <h2 class="section-title">Uma operação nacional, totalmente integrada.</h2>
+        <p class="section-sub" style="color: rgba(255,255,255,0.55);">A SERGES substitui todos os seus prestadores regionais por uma única plataforma de gestão de saúde ocupacional — com cobertura em 3.400+ municípios, sob um único contrato e com dashboard centralizado.</p>
+
+        <div class="solucao-pilares" style="margin-top:40px;">
+          <div class="pilar-item">
+            <div class="pilar-icon">🗺️</div>
+            <div class="pilar-texto">
+              <h4>Rede nacional própria e credenciada</h4>
+              <p>6.000+ médicos em 3.400+ municípios, com padrão único de qualidade e monitoramento contínuo de performance.</p>
+            </div>
+          </div>
+          <div class="pilar-item">
+            <div class="pilar-icon">📊</div>
+            <div class="pilar-texto">
+              <h4>Dashboard unificado de gestão</h4>
+              <p>Visibilidade em tempo real de ASOs, exames, laudos e indicadores para toda a sua operação — de qualquer lugar do Brasil.</p>
+            </div>
+          </div>
+          <div class="pilar-item">
+            <div class="pilar-icon">✅</div>
+            <div class="pilar-texto">
+              <h4>Compliance automático com eSocial e NRs</h4>
+              <p>Laudos, ASOs e programas PGR/PCMSO integrados ao eSocial, reduzindo risco de autuações e passivos trabalhistas.</p>
+            </div>
+          </div>
+          <div class="pilar-item">
+            <div class="pilar-icon">⏱️</div>
+            <div class="pilar-texto">
+              <h4>ASO em 48 horas garantido</h4>
+              <p>SLA de 48h para exames admissionais, periódicos, demissionais e de retorno ao trabalho em todo o território nacional.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="solucao-visual">
+        <div class="solucao-visual-glow"></div>
+        <div class="dashboard-mock">
+          <div class="dash-header">
+            <span class="dash-title">Painel Ocupacional — Nacional</span>
+            <span class="dash-badge">● Ao vivo</span>
+          </div>
+
+          <div class="dash-stat-row">
+            <div class="dash-stat">
+              <div class="dash-stat-num">98,4%</div>
+              <div class="dash-stat-label">Compliance eSocial</div>
+            </div>
+            <div class="dash-stat">
+              <div class="dash-stat-num">31h</div>
+              <div class="dash-stat-label">Tempo médio ASO</div>
+            </div>
+            <div class="dash-stat">
+              <div class="dash-stat-num">3.412</div>
+              <div class="dash-stat-label">Municípios ativos</div>
+            </div>
+            <div class="dash-stat">
+              <div class="dash-stat-num">6.048</div>
+              <div class="dash-stat-label">Médicos credenciados</div>
+            </div>
+          </div>
+
+          <div class="dash-bar-group" style="margin-top:20px; padding-top:20px; border-top: 1px solid rgba(255,255,255,0.06);">
+            <div class="dash-bar-label"><span>ASOs Admissionais</span><span>97%</span></div>
+            <div class="dash-bar-track"><div class="dash-bar-fill" style="width:97%;"></div></div>
+            <div class="dash-bar-label"><span>Periódicos no prazo</span><span>94%</span></div>
+            <div class="dash-bar-track"><div class="dash-bar-fill" style="width:94%;"></div></div>
+            <div class="dash-bar-label"><span>Cobertura Norte/NE</span><span>89%</span></div>
+            <div class="dash-bar-track"><div class="dash-bar-fill" style="width:89%;"></div></div>
+          </div>
+
+          <div style="margin-top:20px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.06); display:flex; flex-direction:column; gap:8px;">
+            <div style="display:flex; justify-content:space-between; font-size:12px; color:rgba(255,255,255,0.4);">
+              <span>Cobertura geográfica</span>
+              <span style="color:var(--green); font-weight:600;">61,3% dos municípios BR</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TABELA COMPARATIVA ─── -->
+<section id="comparativo">
+  <div class="section-inner">
+    <div class="comparativo-header">
+      <div class="section-label">Comparativo</div>
+      <h2 class="section-title">SERGES vs. as alternativas</h2>
+      <p class="section-sub">Veja como o modelo SERGES se compara às soluções que sua empresa provavelmente usa hoje.</p>
+    </div>
+
+    <div class="table-wrapper">
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th style="width:36%;">Critério</th>
+            <th class="col-serges">SERGES Ocupacional</th>
+            <th>Múltiplos prestadores regionais</th>
+            <th>Gestão interna de RH</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Um único contrato nacional</td>
+            <td class="col-serges"><span class="check-yes">✅ Sim</span></td>
+            <td><span class="check-no">❌ Não</span></td>
+            <td><span class="check-no">❌ Não</span></td>
+          </tr>
+          <tr>
+            <td>Cobertura em 3.400+ municípios</td>
+            <td class="col-serges"><span class="check-yes">✅ Sim</span></td>
+            <td><span class="check-warn">⚠️ Fragmentada por estado</span></td>
+            <td><span class="check-no">❌ Não</span></td>
+          </tr>
+          <tr>
+            <td>Dashboard unificado de gestão</td>
+            <td class="col-serges"><span class="check-yes">✅ Sim</span></td>
+            <td><span class="check-no">❌ Não</span></td>
+            <td><span class="check-warn">⚠️ Manual / planilhas</span></td>
+          </tr>
+          <tr>
+            <td>Compliance eSocial / NR automático</td>
+            <td class="col-serges"><span class="check-yes">✅ Automático</span></td>
+            <td><span class="check-warn">⚠️ Variável por prestador</span></td>
+            <td><span class="check-no">❌ Não</span></td>
+          </tr>
+          <tr>
+            <td>ASO em 48h garantido</td>
+            <td class="col-serges"><span class="check-yes">✅ SLA garantido</span></td>
+            <td><span class="check-no">❌ Sem SLA padrão</span></td>
+            <td><span class="check-no">❌ Não</span></td>
+          </tr>
+          <tr>
+            <td>Programas PGR / PCMSO incluídos</td>
+            <td class="col-serges"><span class="check-yes">✅ Incluídos</span></td>
+            <td><span class="check-warn">⚠️ Custo extra</span></td>
+            <td><span class="check-no">❌ Não</span></td>
+          </tr>
+          <tr>
+            <td>Suporte técnico para perícias</td>
+            <td class="col-serges"><span class="check-yes">✅ Especializado</span></td>
+            <td><span class="check-no">❌ Não oferecido</span></td>
+            <td><span class="check-no">❌ Não</span></td>
+          </tr>
+          <tr>
+            <td>Gestão de ambulatório corporativo</td>
+            <td class="col-serges"><span class="check-yes">✅ Operações in-company</span></td>
+            <td><span class="check-no">❌ Fora do escopo</span></td>
+            <td><span class="check-warn">⚠️ Parcial / interno</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SERVIÇOS ─── -->
+<section id="servicos">
+  <div class="section-inner">
+    <div class="servicos-header">
+      <div class="section-label">Portfólio de Serviços</div>
+      <h2 class="section-title">Tudo que sua operação precisa, em um só lugar.</h2>
+      <p class="section-sub">Da admissão ao desligamento, da audiometria ao PCMSO — uma plataforma completa de saúde ocupacional corporativa.</p>
+    </div>
+
+    <div class="servicos-grid">
+      <div class="servico-card">
+        <div class="servico-icon">📋</div>
+        <h3>ASO Completo</h3>
+        <p>Atestados de Saúde Ocupacional admissionais, periódicos, demissionais e de retorno ao trabalho em todo o Brasil, com SLA de 48h.</p>
+        <div class="servico-tags">
+          <span class="servico-tag">Admissional</span>
+          <span class="servico-tag">Periódico</span>
+          <span class="servico-tag">Demissional</span>
+          <span class="servico-tag">Retorno</span>
+        </div>
+      </div>
+
+      <div class="servico-card">
+        <div class="servico-icon">🔬</div>
+        <h3>Exames Complementares</h3>
+        <p>Audiometria, espirometria, acuidade visual, EEG, ECG, exames de imagem e laboratoriais integrados ao laudo e ao eSocial.</p>
+        <div class="servico-tags">
+          <span class="servico-tag">Audiometria</span>
+          <span class="servico-tag">Espirometria</span>
+          <span class="servico-tag">Acuidade Visual</span>
+          <span class="servico-tag">EEG / ECG</span>
+          <span class="servico-tag">Laboratório</span>
+        </div>
+      </div>
+
+      <div class="servico-card">
+        <div class="servico-icon">🏥</div>
+        <h3>Ambulatório Corporativo</h3>
+        <p>Gestão completa de ambulatórios in-company — implantação, operação e controle de estruturas médicas dentro das suas unidades.</p>
+        <div class="servico-tags">
+          <span class="servico-tag">In-company</span>
+          <span class="servico-tag">Gestão</span>
+          <span class="servico-tag">Operações</span>
+        </div>
+      </div>
+
+      <div class="servico-card">
+        <div class="servico-icon">🛡️</div>
+        <h3>PGR — Programa de Gerenciamento de Riscos</h3>
+        <p>Elaboração e gestão do PGR conforme NR-1, com mapeamento de riscos, plano de ação e atualização automática integrada ao eSocial.</p>
+        <div class="servico-tags">
+          <span class="servico-tag">NR-1</span>
+          <span class="servico-tag">eSocial</span>
+          <span class="servico-tag">Mapeamento</span>
+        </div>
+      </div>
+
+      <div class="servico-card">
+        <div class="servico-icon">⚕️</div>
+        <h3>PCMSO — Programa de Controle Médico</h3>
+        <p>Planejamento e coordenação do PCMSO conforme NR-7, com responsabilidade técnica do médico coordenador e relatório anual.</p>
+        <div class="servico-tags">
+          <span class="servico-tag">NR-7</span>
+          <span class="servico-tag">Médico Coord.</span>
+          <span class="servico-tag">Relatório Anual</span>
+        </div>
+      </div>
+
+      <div class="servico-card">
+        <div class="servico-icon">📄</div>
+        <h3>LTCAT — Laudo Técnico</h3>
+        <p>Laudo Técnico das Condições do Ambiente de Trabalho para caracterização de insalubridade e periculosidade, com suporte pericial.</p>
+        <div class="servico-tags">
+          <span class="servico-tag">Insalubridade</span>
+          <span class="servico-tag">Periculosidade</span>
+          <span class="servico-tag">Laudos</span>
+        </div>
+      </div>
+
+      <div class="servico-card">
+        <div class="servico-icon">⚖️</div>
+        <h3>Suporte Técnico para Perícias</h3>
+        <p>Assistência técnica especializada em processos trabalhistas e previdenciários — laudos, contraprovas e suporte ao corpo jurídico da empresa.</p>
+        <div class="servico-tags">
+          <span class="servico-tag">Trabalhista</span>
+          <span class="servico-tag">Previdenciário</span>
+          <span class="servico-tag">Contraprova</span>
+        </div>
+      </div>
+
+      <div class="servico-card">
+        <div class="servico-icon">🖥️</div>
+        <h3>Sistema de Controle Integrado</h3>
+        <p>Plataforma proprietária para gestão de toda a saúde ocupacional: agendamentos, laudos, indicadores, compliance e comunicação com o RH.</p>
+        <div class="servico-tags">
+          <span class="servico-tag">Dashboard</span>
+          <span class="servico-tag">eSocial</span>
+          <span class="servico-tag">Relatórios</span>
+          <span class="servico-tag">API</span>
+        </div>
+      </div>
+
+      <div class="servico-card">
+        <div class="servico-icon">📍</div>
+        <h3>Operações In-Company</h3>
+        <p>Mobilização de equipes médicas nas suas unidades para mutirões periódicos, campanhas de saúde e atendimentos programados em massa.</p>
+        <div class="servico-tags">
+          <span class="servico-tag">Mutirão</span>
+          <span class="servico-tag">Campanha</span>
+          <span class="servico-tag">Nacional</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CLIENTES ─── -->
+<section id="clientes">
+  <div class="section-inner">
+    <div class="clientes-header">
+      <div class="section-label">Casos de Referência</div>
+      <h2 class="section-title">Confiança de quem opera em escala nacional.</h2>
+      <p class="section-sub">Grandes organizações com operações distribuídas por todo o Brasil escolheram a SERGES para unificar sua gestão de saúde ocupacional.</p>
+    </div>
+
+    <div class="clientes-grid">
+      <div class="cliente-card">
+        <div class="cliente-quote">"</div>
+        <p>Com a SERGES, eliminamos mais de 30 contratos regionais diferentes. Hoje temos um único ponto de contato, um único dashboard e compliance automático com o eSocial em todas as nossas unidades.</p>
+        <div class="cliente-info">
+          <div class="cliente-avatar">🏦</div>
+          <div>
+            <div class="cliente-nome">Grande banco nacional</div>
+            <div class="cliente-cargo">Gerente de Saúde Corporativa · operação em 26 estados</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cliente-card">
+        <div class="cliente-quote">"</div>
+        <p>O que mais nos surpreendeu foi a cobertura no interior do país. A SERGES atende nossas unidades em municípios que nenhum outro prestador conseguia cobrir com qualidade e dentro do prazo.</p>
+        <div class="cliente-info">
+          <div class="cliente-avatar">🤝</div>
+          <div>
+            <div class="cliente-nome">Grande cooperativa de saúde</div>
+            <div class="cliente-cargo">Diretora de RH e Benefícios · mais de 15.000 colaboradores</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cliente-card">
+        <div class="cliente-quote">"</div>
+        <p>A transição foi mais simples do que esperávamos. Em 60 dias, toda a operação de ASOs e exames estava consolidada na plataforma da SERGES, com todos os históricos migrados e o time de RH já operando com autonomia.</p>
+        <div class="cliente-info">
+          <div class="cliente-avatar">🏭</div>
+          <div>
+            <div class="cliente-nome">Sistema S — Paraná</div>
+            <div class="cliente-cargo">Coordenador de Segurança do Trabalho · operações em todo o estado</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="lgpd-note">Identidades omitidas em conformidade com a LGPD (Lei 13.709/2018). Casos disponíveis sob NDA para empresas em processo de avaliação.</p>
+  </div>
+</section>
+
+<!-- ─── FAQ ─── -->
+<section id="faq">
+  <div class="section-inner">
+    <div class="faq-header">
+      <div class="section-label">Perguntas Frequentes</div>
+      <h2 class="section-title">Tudo que você precisa saber antes de decidir.</h2>
+    </div>
+
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Como funciona a transição dos prestadores atuais para a SERGES?
+          <span class="faq-chevron">▼</span>
+        </button>
+        <div class="faq-answer">
+          A transição é conduzida pela equipe de implantação da SERGES em fases, sem interrupção do serviço. Mapeamos todos os contratos e prestadores vigentes, migramos o histórico de exames e laudos, habilitamos as unidades na plataforma e colocamos a operação no ar. O prazo médio de implantação completa é de 30 a 60 dias, dependendo da complexidade da operação. Durante todo o processo, mantemos um gestor de projeto dedicado ao seu time de RH.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          A SERGES pode participar de processos de BID, RFP e licitação pública?
+          <span class="faq-chevron">▼</span>
+        </button>
+        <div class="faq-answer">
+          Sim. A SERGES possui toda a documentação necessária para participar de processos de BID, RFP e licitação pública, incluindo certidões, alvarás, registros no CNES, habilitação técnica de médicos coordenadores e comprovações de experiência em operações de grande escala. Disponibilizamos um pacote de habilitação completo mediante solicitação formal, com confidencialidade garantida.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Qual é o nível de confidencialidade garantido durante e após a avaliação?
+          <span class="faq-chevron">▼</span>
+        </button>
+        <div class="faq-answer">
+          Toda a avaliação é conduzida sob sigilo total. As informações compartilhadas durante o processo comercial são tratadas como confidenciais e não são divulgadas a terceiros. Ao avançar para proposta, formalizamos um NDA bilateral antes de qualquer troca de dados operacionais ou estruturais. Nossas referências de clientes são apresentadas anonimizadas em conformidade com a LGPD, e os casos completos são disponibilizados apenas após assinatura de NDA.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Qual é o prazo para receber a avaliação e a proposta comercial?
+          <span class="faq-chevron">▼</span>
+        </button>
+        <div class="faq-answer">
+          Após o primeiro contato, nossa equipe realiza uma avaliação diagnóstica em até 48 horas úteis. Com base no perfil da operação — número de funcionários, estados, tipo de atividade e exames necessários — elaboramos uma proposta personalizada. Para operações de grande porte ou com necessidades específicas, agendamos uma reunião técnica com nosso médico coordenador antes de fechar a proposta.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          A SERGES atende municípios de pequeno porte e interior?
+          <span class="faq-chevron">▼</span>
+        </button>
+        <div class="faq-answer">
+          Sim. A rede SERGES cobre mais de 3.400 municípios brasileiros, incluindo cidades de pequeno porte no interior do país — justamente onde a fragmentação de prestadores regionais é mais crítica. Para municípios sem clínica credenciada na cidade do colaborador, mobilizamos atendimento no município mais próximo ou operamos in-company, com deslocamento da equipe médica até a unidade do cliente.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          O sistema da SERGES se integra ao nosso sistema de RH e ao eSocial?
+          <span class="faq-chevron">▼</span>
+        </button>
+        <div class="faq-answer">
+          Sim. A plataforma da SERGES possui integração nativa com o eSocial (S-2220, S-2240 e demais eventos de SST) e conectores para os principais sistemas de HCM do mercado. Para integrações customizadas com sistemas proprietários, nossa equipe técnica disponibiliza documentação de API REST e suporte dedicado à integração, sem custo adicional para contratos de grande porte.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Como é estruturado o contrato e qual é a vigência mínima?
+          <span class="faq-chevron">▼</span>
+        </button>
+        <div class="faq-answer">
+          Os contratos SERGES são estruturados por escopo de serviços, volume estimado de atendimentos e abrangência geográfica. A vigência padrão é de 12 a 24 meses, com cláusulas de reajuste atreladas ao IPCA ou índice acordado. Para grandes contas, trabalhamos com modelos de contrato multianual com SLAs garantidos e penalidades claramente definidas — dando previsibilidade operacional e financeira para ambos os lados.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── CONTATO / FORMULÁRIO ─── -->
+<section id="contato">
+  <div class="section-inner">
+    <div class="contato-grid">
+      <div class="contato-copy">
+        <div class="section-label">Fale com um especialista</div>
+        <h2>Avalie a SERGES para sua operação — sem compromisso.</h2>
+        <p>Nossa equipe de especialistas em saúde corporativa analisa o perfil da sua empresa e apresenta uma proposta personalizada em até 48 horas. Confidencialidade garantida desde o primeiro contato.</p>
+
+        <div class="contato-garantias">
+          <div class="garantia-item">
+            <div class="garantia-check">✓</div>
+            <span>Resposta em até 48 horas úteis</span>
+          </div>
+          <div class="garantia-item">
+            <div class="garantia-check">✓</div>
+            <span>Diagnóstico gratuito da operação atual</span>
+          </div>
+          <div class="garantia-item">
+            <div class="garantia-check">✓</div>
+            <span>Proposta personalizada por escopo e porte</span>
+          </div>
+          <div class="garantia-item">
+            <div class="garantia-check">✓</div>
+            <span>Confidencialidade e NDA disponível</span>
+          </div>
+          <div class="garantia-item">
+            <div class="garantia-check">✓</div>
+            <span>Sem compromisso de contratação</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="contato-form-wrap">
+        <p class="form-label">Preencha o formulário ou fale diretamente pelo WhatsApp</p>
+
+        <div class="rd-form-container">
+          <div role="main" id="ocupacional-serges-contato"></div>
+        </div>
+
+        <div class="whatsapp-divider">
+          <span>ou fale diretamente</span>
+        </div>
+
+        <a
+          href="https://wa.me/5541992133430?text=Ol%C3%A1%2C+gostaria+de+saber+mais+sobre+a+gest%C3%A3o+de+sa%C3%BAde+ocupacional+da+SERGES."
+          target="_blank"
+          class="btn-whatsapp"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          Falar pelo WhatsApp agora
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="logo-serges.png" alt="SERGES" />
+        <p>SERGES — Serviço de Gestão em Saúde. Gestão de saúde ocupacional corporativa para empresas com operações nacionais.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Solução</h4>
+        <ul>
+          <li><a href="#solucao">Como funciona</a></li>
+          <li><a href="#comparativo">Cobertura nacional</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#clientes">Casos de referência</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Serviços</h4>
+        <ul>
+          <li><a href="#servicos">ASO Completo</a></li>
+          <li><a href="#servicos">Exames Complementares</a></li>
+          <li><a href="#servicos">PGR / PCMSO / LTCAT</a></li>
+          <li><a href="#servicos">Ambulatório Corporativo</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="#contato">Solicitar avaliação</a></li>
+          <li>
+            <a href="https://wa.me/5541992133430?text=Ol%C3%A1%2C+gostaria+de+saber+mais+sobre+a+gest%C3%A3o+de+sa%C3%BAde+ocupacional+da+SERGES." target="_blank">
+              WhatsApp
+            </a>
+          </li>
+          <li><a href="#faq">Perguntas frequentes</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 SERGES — Serviço de Gestão em Saúde. Todos os direitos reservados.</span>
+      <span class="footer-legal">
+        <a href="#">Política de Privacidade</a>
+        &nbsp;·&nbsp;
+        <a href="#">LGPD</a>
+        &nbsp;·&nbsp;
+        <a href="#">Termos de Uso</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<!-- ─── BOTÃO FLUTUANTE WHATSAPP ─── -->
+<a
+  href="https://wa.me/5541992133430?text=Ol%C3%A1%2C+gostaria+de+saber+mais+sobre+a+gest%C3%A3o+de+sa%C3%BAde+ocupacional+da+SERGES."
+  target="_blank"
+  class="whatsapp-float"
+  aria-label="Falar pelo WhatsApp"
+>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+  <span class="whatsapp-tooltip">Falar pelo WhatsApp</span>
+</a>
+
+<!-- ─── SCRIPTS ─── -->
+<script src="https://d335luupugsy2.cloudfront.net/js/rdstation-forms/stable/rdstation-forms.min.js"></script>
+<script>
+  // RD Station form — hero
+  new RDStationForms('ocupacional-serges', 'null').createForm();
+
+  // RD Station form — seção de contato (segundo embed com ID diferente para evitar conflito)
+  // Caso o form ID seja o mesmo, use apenas um embed e remova o segundo
+  // new RDStationForms('ocupacional-serges', 'null').createForm();
+
+  // FAQ accordion
+  function toggleFaq(btn) {
+    var item = btn.parentElement;
+    var isOpen = item.classList.contains('open');
+    // Fechar todos
+    document.querySelectorAll('.faq-item.open').forEach(function(el) {
+      el.classList.remove('open');
+    });
+    // Abrir o clicado (se não estava aberto)
+    if (!isOpen) {
+      item.classList.add('open');
+    }
+  }
+
+  // Nav scroll behavior
+  window.addEventListener('scroll', function () {
+    var nav = document.querySelector('nav');
+    if (window.scrollY > 40) {
+      nav.style.background = 'rgba(8, 13, 26, 0.95)';
+    } else {
+      nav.style.background = 'rgba(8, 13, 26, 0.7)';
+    }
+  });
+
+  // Smooth scroll para links internos
+  document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+    anchor.addEventListener('click', function(e) {
+      var target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
+</body>
+</html>
