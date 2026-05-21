@@ -202,12 +202,17 @@
       align-items: center;
       flex-wrap: wrap;
     }
-    .trust-logos span {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: var(--gray-700);
-      letter-spacing: 0.5px;
-      opacity: 0.7;
+    .trust-logos img {
+      height: 36px;
+      width: auto;
+      object-fit: contain;
+      opacity: 0.75;
+      filter: grayscale(100%);
+      transition: opacity 0.2s, filter 0.2s;
+    }
+    .trust-logos img:hover {
+      opacity: 1;
+      filter: grayscale(0%);
     }
 
     /* ─── SECTIONS ─── */
@@ -616,9 +621,9 @@
   <div class="trust-strip">
     <p>Empresas que já centralizaram saúde corporativa com a SERGES</p>
     <div class="trust-logos">
-      <span>Associação de Saúde da Família</span>
-      <span>Hapvida</span>
-      <span>Medicar</span>
+      <img src="logo-asf.png" alt="Associação Saúde da Família" />
+      <img src="logo-hapvida.png" alt="Hapvida" />
+      <img src="logo-medicar.jpeg" alt="Medicar" />
     </div>
   </div>
 
